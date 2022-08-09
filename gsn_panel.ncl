@@ -46,17 +46,14 @@ undef("get_res_value_with_index")
 function get_res_value_with_index(res:logical, att:string, index:integer, default)
 begin
   att_value = get_res_value_keep(res, att, default)
-  isAttArray = isArray(att_value)
   dim_att = dimsizes(att_value)
-  if(isAttArray) then
-    if(index .lt. dim_att)
-      return(att_value(index))
-    else
-      printc("the index is larger than size of the attribute, using the last element: "+att_value(dim_att-1),True)
-      return(att_value(dim_att-1))
-    end if
+  if(index .lt. dim_att)
+    return(att_value(index))
   else
-    return(att_value)
+    if(dim_att .ne. 1)
+      print("the index is larger than size of the attribute, using the last element: "+att_value(dim_att-1),True)
+    end if
+    return(att_value(dim_att-1))
   end if
 end
 
