@@ -4,7 +4,7 @@
 
    原来的`gsn_panel`函数只能添加一个总的色标，对于需要两个色标的情况（如下图，两张子图使用一个色标），要么在子图里面直接画色标，要么调用两次`gsn_panel`（需要额外设置多个属性），总的来讲都有些麻烦，于是去扒了一下源码，修改了部分功能，使其支持多个色标（理论上无数个都可以）。
 
-![Image.png](https://res.craft.do/user/full/8e0bba6b-701c-0e73-c97b-560229b46323/doc/236CF10C-9DF3-4DF0-AD68-269DC4762E52/0C67243D-6AAD-469A-9403-A862815FEF3F_2/sInMDpnAhAgzFJxEaS4ypbs0RPHBIAcAWzf3UxECAYoz/Image.png)
+![Image.png](example.png)
 
 #### 使用方法：
 
